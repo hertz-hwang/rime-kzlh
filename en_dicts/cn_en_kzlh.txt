@@ -1,0 +1,32 @@
+# Rime table
+# coding: utf-8
+#@/db_name	cn_en_kzlh.txt
+#@/db_type	tabledb
+#
+# https://github.com/iDvel/rime-ice
+# ------- 中英混输词库 for 小鹤双拼 -------
+# 由 others/cn_en.txt 自动生成
+#
+# 此行之后不能写注释
+X光	Xgz
+X光	xgz
+X光片	Xgzpf
+X光片	xgzpf
+X射线	Xvexf
+X射线	xvexf
+X刀	Xds
+X刀	xds
+T恤	Txu
+T恤	txu
+T恤衫	Txuvj
+T恤衫	txuvj
+AD钙奶	ADgknk
+AD钙奶	adgknk
+UU加速器	UUjksuqi
+UU加速器	uujksuqi
+Cinity厅	Cinitytm
+Cinity厅	cinitytm
+Eul的神圣法杖	Euldevmvnfaeh
+Eul的神圣法杖	euldevmvnfaeh
+A杖	Aeh
+A杖	aeh

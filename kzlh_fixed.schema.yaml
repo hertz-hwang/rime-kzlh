@@ -1,0 +1,43 @@
+# Rime schema
+# encoding: utf-8
+
+schema:
+  schema_id: kzlh_fixed
+  name: 狂浪·字词
+  version: "2026.07.15"
+  author:
+    - 荒
+  description: |
+    狂浪固顶码表
+
+# 拼写设定
+speller:
+  alphabet: "zyxwvutsrqponmlkjihgfedcba;/NUO`"                 # 不直接上屏的标点
+#  initials: 'abcdefghijklmnopqrstuvwxyz;/ZYXWVUTSRQPONMLKJIHGFEDCBA'                   # 可以作为第一位的「引导键」
+  delimiter: "'"     # 上屛时的音节间分音符
+  max_code_length: 4  # 形码最大码长，超过则顶字上屛
+  auto_select: true   #是否开启无重码时自动上屏（仅在编码吻合时判断）
+#  auto_select_pattern: ^;\w+|^\w{4}$   #自动上屏规则  对 [;] 引导的编码实行候选唯一自动上屏， 若要添加四码上屏功能，在  ^;\w+ 后面 加上  |^\w{4}$  ，以此类推。直接注释禁用则达最大码长后，无重码时自动上屏
+  auto_select_pattern: ^;\w+|^o\w{3}$
+  auto_clear: max_length # 3种选择， manual|auto|max_length 空码按下一键确认清屏|空码自动清|达到最长码时后码顶上清屏
+  algebra:
+    - xform/^\*//  # 特码以星号开头，以便在全码后置脚本中区分，以防识别为全码
+
+# 主翻译器
+translator:
+  dictionary: kzlh_fixed                            # 挂载词库
+  enable_charset_filter: false          # 字符集过滤（低重形码用不着）
+  enable_encoder: false                  # 是否启用 自动造词
+  enable_sentence: false                 # 是否启用造句模式
+  encode_commit_history: false     # 是否对已上屛词自动成词
+  enable_completion: false              # 编码提示开关（提前显示尚未输入完整码的字）
+  enable_user_dict: false                 # 是否启用用户词典（记录动态字词频、自造词）
+#  max_phrase_length: 4                  #最大自动成词 词长
+  initial_quality: 3                            # 主词库 初始权重应比其他高
+  comment_format:  #提示码自定义
+    - "xform/~/ /" #去掉编码提示前的~号
+    # - "xform/^/ /" #提示前面 +间距
+
+# 标点符号
+punctuator:
+  import_preset: symbols  # 从 default.yaml 继承通用的
