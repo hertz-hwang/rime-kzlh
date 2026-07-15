@@ -1,0 +1,15 @@
+patch:
+  engine/filters/+:
+    - lua_filter@*aux_code@kzlh
+
+  speller/alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA/
+
+  key_binder/+:
+    aux_code_learn_trigger: "/"      # 辅码筛选，允许候选词进入用户词库
+    aux_code_no_learn_trigger: "//"  # 辅码筛选，仅上屏，不进入用户词库
+    bindings:
+      - { when: has_menu, accept: semicolon, send: "2" }
+      - { when: has_menu, accept: apostrophe, send: '3' }
+      - { when: has_menu, accept: minus, send: Page_Up }
+      - { when: has_menu, accept: equal, send: Page_Down }
+    show_aux_notice: true
