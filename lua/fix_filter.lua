@@ -1,10 +1,10 @@
 local Top = {}
 
 function Top.init(env)
-   env.quick_code_indicator = env.engine.schema.config:get_string("fixed_user/quick_code_indicator") or "📌"
+   env.quick_code_indicator = env.engine.schema.config:get_string("fixed_user/quick_code_indicator") or " 🌊"
    -- LL_linglong 词库的初始 quality 设置为 100000，用于识别来源
    env.linglong_quality_threshold = 100000
-   env.custom_phrases_indicator = env.engine.schema.config:get_string("fixed_user/custom_phrases_indicator") or "💡"
+   env.custom_phrases_indicator = env.engine.schema.config:get_string("fixed_user/custom_phrases_indicator") or " 💡"
    -- 自定义词库的初始 quality 设置为 10000，用于识别来源
    env.custom_quality_threshold = 10000
 end
